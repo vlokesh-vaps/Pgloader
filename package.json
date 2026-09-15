@@ -1,0 +1,9 @@
+{
+  "name": "pgloader-dashboard",
+  "private": true,
+  "scripts": {
+    "dev": "bash scripts/dev.sh",
+    "backend": "PYTHONPATH=backend uvicorn app.main:app --reload --port 8009",
+    "frontend": "npm --prefix frontend run dev"
+  }
+}

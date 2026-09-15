@@ -1,0 +1,11 @@
+services:
+  backend:
+    build: ./backend
+    env_file: .env
+    ports: ["8009:8009"]
+    volumes: ["./.pgloader-jobs:/app/.pgloader-jobs"]
+    # Install pgloader and FreeTDS in this image for real migrations; compose does not provide databases.
+  frontend:
+    build: ./frontend
+    ports: ["5173:80"]
+    depends_on: [backend]
